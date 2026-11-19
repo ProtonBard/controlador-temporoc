@@ -25,7 +25,8 @@ jobs:
 
     - name: Compilar con PyInstaller
       run: |
-        pyinstaller --name "Controlador_Temporoc" --windowed --onefile main_gui.py
+        pyinstaller --name "Controlador_Temporoc" --windowed --onefile --paths src --add-data "interfaz.ui;." --add-data "src;src" main_gui.py
+
 
     - name: Subir el ejecutable (.exe)
       uses: actions/upload-artifact@v4
